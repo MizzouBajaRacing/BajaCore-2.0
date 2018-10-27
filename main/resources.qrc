@@ -2,8 +2,8 @@
     <qresource prefix="/">
         <file>images/Background.png</file>
         <file>images/logo.png</file>
-        <file>qml/dashboard.qml</file>
-        <file>qml/DashboardGaugeStyle.qml</file>
-        <file>qml/ValueSource.qml</file>
+        <file>ValueSource.qml</file>
+        <file>DashboardGaugeStyle.qml</file>
+        <file>dashboard.qml</file>
     </qresource>
 </RCC>
