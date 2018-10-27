@@ -27,7 +27,7 @@ class Main(QObject):
     def __init__(self,parent=None):
         super().__init__(parent)
         self.engine = QQmlApplicationEngine(self)
-        self.engine.load(QUrl.fromLocalFile('qml/dashboard.qml'))
+        self.engine.load(QUrl.fromLocalFile('dashboard.qml'))
         self.win = self.engine.rootObjects()[0]
 
 
