@@ -3,7 +3,7 @@ import QtQuick.Window 2.1
 import QtQuick.Controls 1.4
 import QtQuick.Controls.Styles 1.4
 import QtQuick.Extras 1.4
-import QtCharts 2.2
+//import QtCharts 2.2
 
 
 //import "MainDash.qml" as mainDashModule
@@ -519,88 +519,88 @@ ApplicationWindow {
     }
 
 
-    Item {
-        id: graph
-        objectName: 'graphObj'
-        visible: true
-        width: 800
-        height: 480
-        anchors.fill: parent
+//    Item {
+//        id: graph
+//        objectName: 'graphObj'
+//        visible: true
+//        width: 800
+//        height: 480
+//        anchors.fill: parent
 
-        ChartView {
-            id: chart
-            objectName: "chartObj"
-            //animationOptions: ChartView.AllAnimations
-            animationOptions: ChartView.SeriesAnimations
-            animationEasingCurve : easing
-            theme: ChartView.ChartThemeDark
-            property bool openGL: true
-            property bool openGLSupported: true
-            anchors.fill: parent
-            antialiasing: true
+//        ChartView {
+//            id: chart
+//            objectName: "chartObj"
+//            //animationOptions: ChartView.AllAnimations
+//            animationOptions: ChartView.SeriesAnimations
+//            animationEasingCurve : easing
+//            theme: ChartView.ChartThemeDark
+//            property bool openGL: true
+//            property bool openGLSupported: true
+//            anchors.fill: parent
+//            antialiasing: true
 
-            legend {
-                visible: false
-            }
+//            legend {
+//                visible: false
+//            }
 
-            axes: [
-                    ValueAxis{
-                        id: xAxis
-                        min: 0.0
-                        max: 0.0
-                    },
-                    ValueAxis{
-                        id: yAxis
-                        min: 0.0
-                        max: 0.0
-                    }
-                ]
-            property var shit: SplineSeries {
-                   name: ""
-                   objectName: "linesObj"
-                   axisX: xAxis
-                   axisY: yAxis
-                   useOpenGL: chartView.openGL
-                   color: "yellow"
-               }
+//            axes: [
+//                    ValueAxis{
+//                        id: xAxis
+//                        min: 0.0
+//                        max: 0.0
+//                    },
+//                    ValueAxis{
+//                        id: yAxis
+//                        min: 0.0
+//                        max: 0.0
+//                    }
+//                ]
+//            property var shit: SplineSeries {
+//                   name: ""
+//                   objectName: "linesObj"
+//                   axisX: xAxis
+//                   axisY: yAxis
+//                   useOpenGL: chartView.openGL
+//                   color: "yellow"
+//               }
 
-            property var shit2: SplineSeries {
-                   name: ""
-                   objectName: "linesObj"
-                   axisX: xAxis
-                   axisY: yAxis
-                   useOpenGL: chartView.openGL
-                   color: "goldenRod"
-               }
+//            property var shit2: SplineSeries {
+//                   name: ""
+//                   objectName: "linesObj"
+//                   axisX: xAxis
+//                   axisY: yAxis
+//                   useOpenGL: chartView.openGL
+//                   color: "goldenRod"
+//               }
 
 
-            function makeChart (x, y) {
-                //LineSeries.append(x, y)
-                //var series = chart.createSeries(ChartView.SeriesTypeLine, "line", xAxis, yAxis)
-                xAxis.max = x + 10
-                xAxis.min = x - 100
-                if (x > xAxis.max){
-                    //xAxis.max = x + 10
-                    //xAxis.min = x - 100
-                    scrollRight(10)
-                }
-                if (y > yAxis.max - 5){
-                    yAxis.max = y + 10
-                    yAxis.min = (y*-1) - 10
-                }
-                if (y < yAxis.min + 5){
-                    yAxis.min = y - 10
-                    yAxis.max = (y*-1) + 10
-                }
+//            function makeChart (x, y) {
+//                //LineSeries.append(x, y)
+//                //var series = chart.createSeries(ChartView.SeriesTypeLine, "line", xAxis, yAxis)
+//                xAxis.max = x + 10
+//                xAxis.min = x - 100
+//                if (x > xAxis.max){
+//                    //xAxis.max = x + 10
+//                    //xAxis.min = x - 100
+//                    scrollRight(10)
+//                }
+//                if (y > yAxis.max - 5){
+//                    yAxis.max = y + 10
+//                    yAxis.min = (y*-1) - 10
+//                }
+//                if (y < yAxis.min + 5){
+//                    yAxis.min = y - 10
+//                    yAxis.max = (y*-1) + 10
+//                }
 
-                //shit = line
-                shit.append(x, y)
-                shit2.append(x, 10+ Math.cos(y)*10)
+//                //shit = line
+//                shit.append(x, y)
+//                shit2.append(x, 10+ Math.cos(y)*10)
 
-            }
+//            }
 
-        }
-    }
+//        }
+//    }
 
     Item {
         id: loadingScreen
