@@ -18,7 +18,7 @@ import pyqtgraph as pg
 import numpy as np
 from pyqtgraph.Qt import QtGui, QtCore
 from PyQt5.QtWidgets import QGraphicsView, QGraphicsScene, QGraphicsWidget, QGraphicsLinearLayout
-from PyQt5.QtChart import QChart, QChartView, QLineSeries
+#from PyQt5.QtChart import QChart, QChartView, QLineSeries
 import math
 import PyQt5
 
@@ -71,10 +71,11 @@ class Main(QObject):
         self.thread1.started.connect(self.timer.run)
         # self.thread1.start()
 
-        self.graph = self.win.findChild(QObject,'chartObj')
+        #self.graph = self.win.findChild(QObject,'chartObj')
 
     def updateGraph (self, x, y):
-        self.chartV.makeChart(x, y)
+        #self.chartV.makeChart(x, y)
+        pass
   
 
     def displayDash (self):
