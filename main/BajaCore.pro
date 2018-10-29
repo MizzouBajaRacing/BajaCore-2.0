@@ -32,9 +32,10 @@ RESOURCES += \
     resources.qrc
 
 OTHER_FILES += \
-    dashboard.qml \
-    ValueSource.qml \
-    DashboardGaugeStyle.qml
+    qml/dashboard.qml \
+    qml/ValueSource.qml \
+    qml/DashboardGaugeStyle.qml
+    #images/Background.png
 
 HEADERS += \
         mainwindow.h
@@ -49,4 +50,8 @@ RESOURCES += \
 
 DISTFILES += \
     BajaCore.py \
-    dashboard.qml
+    qml/dashboard.qml \
+    qml/DashboardGaugeStyle.qml \
+    qml/ValueSource.qml
+    #images/Background.png
+
