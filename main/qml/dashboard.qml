@@ -190,8 +190,8 @@ ApplicationWindow {
             maximumValue: 40
             width: height
             height: container.height * 0.8
-            y: 500
-            x: 300
+            y: 200
+            //x: 300
             anchors.horizontalCenter: parent.horizontalCenter
             //anchors.bottom: parent.bottom - 50
             //anchors.top: parent.bottom
@@ -223,47 +223,34 @@ ApplicationWindow {
                     return radians * (180 / Math.PI);
                 }
 
-                function paintBackground(ctx) {
-                    if (halfGauge) {
-                        ctx.beginPath();
-                        ctx.rect(0, 0, ctx.canvas.width, ctx.canvas.height * 0.7);
-                        ctx.clip();
-                    }
-
-                    ctx.beginPath();
-                    ctx.fillStyle = "black";
-                    ctx.ellipse(0, 0, ctx.canvas.width, ctx.canvas.height);
-                    ctx.fill();
-
-                    ctx.beginPath();
-                    ctx.lineWidth = tickmarkInset;
-                    ctx.strokeStyle = "black";
-                    ctx.arc(xCenter, yCenter, outerRadius - ctx.lineWidth / 2, outerRadius - ctx.lineWidth / 2, 0, Math.PI * 2);
-                    ctx.stroke();
-
-                    ctx.beginPath();
-                    ctx.lineWidth = tickmarkInset / 2;
-                    ctx.strokeStyle = "yellow";
-                    ctx.arc(xCenter, yCenter, outerRadius - ctx.lineWidth / 2, outerRadius - ctx.lineWidth / 2, 0, Math.PI * 2);
-                    ctx.stroke();
-
-                    ctx.beginPath();
-                    var gradient = ctx.createRadialGradient(xCenter, yCenter, 0, xCenter, yCenter, outerRadius * 1.5);
-                    gradient.addColorStop(0, Qt.rgba(1, 1, 1, 0));
-                    gradient.addColorStop(0.7, Qt.rgba(1, 1, 1, 0.13));
-                    gradient.addColorStop(1, Qt.rgba(1, 1, 1, 1));
-                    ctx.fillStyle = gradient;
-                    ctx.arc(xCenter, yCenter, outerRadius - tickmarkInset, outerRadius - tickmarkInset, 0, Math.PI * 2);
-                    ctx.fill();
-                }
-
                 background: Canvas {
                     id: backGauge
-                    onPaint: {
-                        var ctx = getContext("2d");
-                        ctx.reset();
-                        paintBackground(ctx);
+//                    onPaint: {
+//                        var ctx = getContext("2d");
+//                        ctx.reset();
+//                        paintBackground(ctx);
+//                    }
+                    Rectangle {
+                        id: center
+                        anchors.horizontalCenter: parent.horizontalCenter
+                        anchors.verticalCenter: parent.verticalCenter
+                        width: parent.width<parent.height?parent.width:parent.height
+                        height: width
+                        color: "black"
+                        border.color: "yellow"
+                        border.width: 4
+                        radius: width*0.5
+            //             Text {
+            //                  anchor.fill: parent
+            //                  color: "red"
+            //                  text: "Boom"
+            //             }
+                        gradient: Gradient {
+                            GradientStop { position: 1.0; color: "black" }
+                            GradientStop { position: 0.0; color: "#3B3B3B" }
+                        }
                     }
+
 
             //        Text {
             //            id: speedText
@@ -677,14 +664,14 @@ ApplicationWindow {
                    easing.type: Easing.InOutQuad
                    duration: 3000
                }
-               PropertyAnimation {
-                   target: speedometer
-                   property: "y"
-                   from: 500
-                   to: 220
-                   duration: 3000
-                   easing.type: Easing.InOutSine
-               }
+//               PropertyAnimation {
+//                   target: speedometer
+//                   property: "y"
+//                   from: 500
+//                   to: 220
+//                   duration: 3000
+//                   easing.type: Easing.InOutSine
+//               }
            },
 
             Transition {

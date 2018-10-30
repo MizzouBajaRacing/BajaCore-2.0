@@ -203,7 +203,7 @@ class load (QObject):
         # self.startTimer()
 
     def start(self):
-        time.sleep(3)
+        time.sleep(6)
         self.doneSig.emit()
     
 
