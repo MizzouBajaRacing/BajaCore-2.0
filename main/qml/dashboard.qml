@@ -190,7 +190,7 @@ ApplicationWindow {
             maximumValue: 40
             width: height
             height: container.height * 0.8
-            y: 200
+            y: 220
             //x: 300
             anchors.horizontalCenter: parent.horizontalCenter
             //anchors.bottom: parent.bottom - 50
@@ -204,8 +204,8 @@ ApplicationWindow {
                 labelStepSize: 10
                 labelInset: toPixels(1.23)
 
-                property real xCenter: outerRadius
-                property real yCenter: outerRadius
+                property real xCenter: parent.horizontalCenter
+                property real yCenter: speedometer.y
                 property real needleLength: outerRadius - tickmarkInset * 1.25
                 property real needleTipWidth: toPixels(0.06)
                 property real needleBaseWidth: toPixels(0.06)
