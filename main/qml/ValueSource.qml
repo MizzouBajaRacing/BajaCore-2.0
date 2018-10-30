@@ -12,7 +12,7 @@ Item {
         newMPH = speed
         oldMPH = oldSpeed
         //durr =  ((2600*(speed - oldSpeed)) / (speed - oldSpeed))
-        durr =  ((1150*(speed - oldSpeed)) / (speed - oldSpeed))
+        durr =  ((1050*(speed - oldSpeed)) / (speed - oldSpeed))
         //durr =  1000
         animateSpeed.restart()
 
