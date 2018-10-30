@@ -183,6 +183,7 @@ ApplicationWindow {
         }
 
         CircularGauge {
+            visible: true
             id: speedometer
             value: valueSource.mph
             //anchors.verticalCenter: parent.verticalCenter
