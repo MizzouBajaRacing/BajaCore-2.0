@@ -104,7 +104,7 @@ ApplicationWindow {
                 anchors.topMargin: 15
                 text: valueSource.currTime
                 color: "white"
-                font.pixelSize: 70
+                font.pixelSize: 60
                 font.bold: true
             }
         }
@@ -140,7 +140,7 @@ ApplicationWindow {
                 anchors.topMargin: 15
                 text: "00:00.00"
                 color: "white"
-                font.pixelSize: 70
+                font.pixelSize: 60
                 font.bold: true
             }
         }
