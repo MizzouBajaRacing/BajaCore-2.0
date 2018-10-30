@@ -206,7 +206,8 @@ class load (QObject):
     
 
 def main2 ():
-    app = QtGui.QApplication(sys.argv)
+    #app = QtGui.QApplication(sys.argv)
+    app = QGuiApplication(sys.argv)
 
     main = Main()
     main.show()
