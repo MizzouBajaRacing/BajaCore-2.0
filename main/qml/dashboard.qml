@@ -396,170 +396,170 @@ ApplicationWindow {
 
         CircularGauge {
             visible: false
-            id: cvtTemp
-            value: valueSource.mph * 10
-            //anchors.verticalCenter: parent.verticalCenter
-            maximumValue: 400
-            width: height
-            height: 150
-            y: 320
-            x: 625
-            //anchors.right: parent.right
-            //anchors.rightMargin: 20
-            //anchors.bottom: parent.bottom - 50
-            //anchors.top: parent.bottom
+//            id: cvtTemp
+//            value: valueSource.mph * 10
+//            //anchors.verticalCenter: parent.verticalCenter
+//            maximumValue: 400
+//            width: height
+//            height: 150
+//            y: 320
+//            x: 625
+//            //anchors.right: parent.right
+//            //anchors.rightMargin: 20
+//            //anchors.bottom: parent.bottom - 50
+//            //anchors.top: parent.bottom
 
-            style: CircularGaugeStyle {
-                minimumValueAngle: -90
-                maximumValueAngle: 90
-                tickmarkInset: toPixels(0.04)
-                //minorTickmarkInset: tickmarkInset
-                labelStepSize: 50
-                labelInset: toPixels(1.23)
+//            style: CircularGaugeStyle {
+//                minimumValueAngle: -90
+//                maximumValueAngle: 90
+//                tickmarkInset: toPixels(0.04)
+//                //minorTickmarkInset: tickmarkInset
+//                labelStepSize: 50
+//                labelInset: toPixels(1.23)
 
-                property real xCenter: outerRadius
-                property real yCenter: outerRadius
-                property real needleLength: outerRadius - tickmarkInset * 1.25
-                property real needleTipWidth: toPixels(0.06)
-                property real needleBaseWidth: toPixels(0.06)
-                property bool halfGauge: true
+//                property real xCenter: outerRadius
+//                property real yCenter: outerRadius
+//                property real needleLength: outerRadius - tickmarkInset * 1.25
+//                property real needleTipWidth: toPixels(0.06)
+//                property real needleBaseWidth: toPixels(0.06)
+//                property bool halfGauge: true
 
-                function toPixels(percentage) {
-                    return percentage * outerRadius;
-                }
+//                function toPixels(percentage) {
+//                    return percentage * outerRadius;
+//                }
 
-                function degToRad(degrees) {
-                    return degrees * (Math.PI / 180);
-                }
+//                function degToRad(degrees) {
+//                    return degrees * (Math.PI / 180);
+//                }
 
-                function radToDeg(radians) {
-                    return radians * (180 / Math.PI);
-                }
+//                function radToDeg(radians) {
+//                    return radians * (180 / Math.PI);
+//                }
 
-                function paintBackground(ctx) {
-                    if (halfGauge) {
-                        ctx.beginPath();
-                        ctx.rect(0, 0, ctx.canvas.width, ctx.canvas.height * 1);
-                        ctx.clip();
-                    }
+//                function paintBackground(ctx) {
+//                    if (halfGauge) {
+//                        ctx.beginPath();
+//                        ctx.rect(0, 0, ctx.canvas.width, ctx.canvas.height * 1);
+//                        ctx.clip();
+//                    }
 
-                    ctx.beginPath();
-                    ctx.fillStyle = "black";
-                    ctx.ellipse(0, 0, ctx.canvas.width, ctx.canvas.height);
-                    ctx.fill();
+//                    ctx.beginPath();
+//                    ctx.fillStyle = "black";
+//                    ctx.ellipse(0, 0, ctx.canvas.width, ctx.canvas.height);
+//                    ctx.fill();
 
-                    ctx.beginPath();
-                    ctx.lineWidth = tickmarkInset;
-                    ctx.strokeStyle = "black";
-                    ctx.arc(xCenter, yCenter, outerRadius - ctx.lineWidth / 2, outerRadius - ctx.lineWidth / 2, 0, Math.PI * 2);
-                    ctx.stroke();
+//                    ctx.beginPath();
+//                    ctx.lineWidth = tickmarkInset;
+//                    ctx.strokeStyle = "black";
+//                    ctx.arc(xCenter, yCenter, outerRadius - ctx.lineWidth / 2, outerRadius - ctx.lineWidth / 2, 0, Math.PI * 2);
+//                    ctx.stroke();
 
-                    ctx.beginPath();
-                    ctx.lineWidth = tickmarkInset / 2;
-                    ctx.strokeStyle = "yellow";
-                    ctx.arc(xCenter, yCenter, outerRadius - ctx.lineWidth / 2, outerRadius - ctx.lineWidth / 2, 0, Math.PI * 2);
-                    ctx.stroke();
+//                    ctx.beginPath();
+//                    ctx.lineWidth = tickmarkInset / 2;
+//                    ctx.strokeStyle = "yellow";
+//                    ctx.arc(xCenter, yCenter, outerRadius - ctx.lineWidth / 2, outerRadius - ctx.lineWidth / 2, 0, Math.PI * 2);
+//                    ctx.stroke();
 
-                    ctx.beginPath();
-                    var gradient = ctx.createRadialGradient(xCenter, yCenter, 0, xCenter, yCenter, outerRadius * 1.5);
-                    gradient.addColorStop(0, Qt.rgba(1, 1, 1, 0));
-                    gradient.addColorStop(0.7, Qt.rgba(1, 1, 1, 0.13));
-                    gradient.addColorStop(1, Qt.rgba(1, 1, 1, 1));
-                    ctx.fillStyle = gradient;
-                    ctx.arc(xCenter, yCenter, outerRadius - tickmarkInset, outerRadius - tickmarkInset, 0, Math.PI * 2);
-                    ctx.fill();
-                }
+//                    ctx.beginPath();
+//                    var gradient = ctx.createRadialGradient(xCenter, yCenter, 0, xCenter, yCenter, outerRadius * 1.5);
+//                    gradient.addColorStop(0, Qt.rgba(1, 1, 1, 0));
+//                    gradient.addColorStop(0.7, Qt.rgba(1, 1, 1, 0.13));
+//                    gradient.addColorStop(1, Qt.rgba(1, 1, 1, 1));
+//                    ctx.fillStyle = gradient;
+//                    ctx.arc(xCenter, yCenter, outerRadius - tickmarkInset, outerRadius - tickmarkInset, 0, Math.PI * 2);
+//                    ctx.fill();
+//                }
 
-                background: Canvas {
-                    id: backGauge
-                    onPaint: {
-                        var ctx = getContext("2d");
-                        ctx.reset();
-                        paintBackground(ctx);
-                    }
-                }
+//                background: Canvas {
+//                    id: backGauge
+//                    onPaint: {
+//                        var ctx = getContext("2d");
+//                        ctx.reset();
+//                        paintBackground(ctx);
+//                    }
+//                }
 
-                needle: Canvas {
-                    implicitWidth: needleBaseWidth
-                    implicitHeight: needleLength
+//                needle: Canvas {
+//                    implicitWidth: needleBaseWidth
+//                    implicitHeight: needleLength
 
-                    property real xCenter: width / 2
-                    property real yCenter: height / 2
+//                    property real xCenter: width / 2
+//                    property real yCenter: height / 2
 
-                    onPaint: {
-                        var ctx = getContext("2d");
-                        ctx.reset();
+//                    onPaint: {
+//                        var ctx = getContext("2d");
+//                        ctx.reset();
 
-                        ctx.beginPath();
-                        ctx.moveTo(xCenter, height);
-                        ctx.lineTo(xCenter - needleBaseWidth / 2, height - needleBaseWidth / 2);
-                        ctx.lineTo(xCenter - needleTipWidth / 2, 0);
-                        ctx.lineTo(xCenter, yCenter - needleLength);
-                        ctx.lineTo(xCenter, 0);
-                        ctx.closePath();
-            //            ctx.fillStyle = Qt.darker(Qt.rgba(1, 1, 0.2, 1));
-                        ctx.fillStyle = Qt.darker("red");
-                        ctx.fill();
+//                        ctx.beginPath();
+//                        ctx.moveTo(xCenter, height);
+//                        ctx.lineTo(xCenter - needleBaseWidth / 2, height - needleBaseWidth / 2);
+//                        ctx.lineTo(xCenter - needleTipWidth / 2, 0);
+//                        ctx.lineTo(xCenter, yCenter - needleLength);
+//                        ctx.lineTo(xCenter, 0);
+//                        ctx.closePath();
+//            //            ctx.fillStyle = Qt.darker(Qt.rgba(1, 1, 0.2, 1));
+//                        ctx.fillStyle = Qt.darker("red");
+//                        ctx.fill();
 
-                        ctx.beginPath();
-                        ctx.moveTo(xCenter, height)
-                        ctx.lineTo(width, height - needleBaseWidth / 2);
-                        ctx.lineTo(xCenter + needleTipWidth / 2, 0);
-                        ctx.lineTo(xCenter, 0);
-                        ctx.closePath();
-                        //ctx.fillStyle = Qt.lighter(Qt.rgba(0.6, 1, 0.53, 1));
-            //            ctx.fillStyle = Qt.rgba(1, 1, 0.2, 1);
-                        ctx.fillStyle = "red";
-                        ctx.fill();
-                    }
-                }
+//                        ctx.beginPath();
+//                        ctx.moveTo(xCenter, height)
+//                        ctx.lineTo(width, height - needleBaseWidth / 2);
+//                        ctx.lineTo(xCenter + needleTipWidth / 2, 0);
+//                        ctx.lineTo(xCenter, 0);
+//                        ctx.closePath();
+//                        //ctx.fillStyle = Qt.lighter(Qt.rgba(0.6, 1, 0.53, 1));
+//            //            ctx.fillStyle = Qt.rgba(1, 1, 0.2, 1);
+//                        ctx.fillStyle = "red";
+//                        ctx.fill();
+//                    }
+//                }
 
-                foreground: Canvas {
+//                foreground: Canvas {
 
-                    Rectangle {
-                        id: centerG
-                        anchors.horizontalCenter: parent.horizontalCenter
-                        anchors.verticalCenter: parent.verticalCenter
-                        width: parent.width<parent.height?parent.width:parent.height * 0.8
-                        height: width
-                        color: "black"
-                        border.color: "yellow"
-                        border.width: 1
-                        radius: width*0.5
+//                    Rectangle {
+//                        id: centerG
+//                        anchors.horizontalCenter: parent.horizontalCenter
+//                        anchors.verticalCenter: parent.verticalCenter
+//                        width: parent.width<parent.height?parent.width:parent.height * 0.8
+//                        height: width
+//                        color: "black"
+//                        border.color: "yellow"
+//                        border.width: 1
+//                        radius: width*0.5
 
-                        gradient: Gradient {
-                            GradientStop { position: 1.0; color: "black" }
-                            GradientStop { position: 0.0; color: "#3B3B3B" }
-                        }
-                    }
+//                        gradient: Gradient {
+//                            GradientStop { position: 1.0; color: "black" }
+//                            GradientStop { position: 0.0; color: "#3B3B3B" }
+//                        }
+//                    }
 
-                    Text {
-                        id: speedText
-                        font.pixelSize: 55
-                        text: kphInt
-                        color: "white"
-                        //horizontalAlignment: Text.AlignLeft
-                        anchors.horizontalCenter: parent.horizontalCenter
-                        //anchors.top: parent.top
-                        //anchors.left: centerG.left
-                        //anchors.leftMargin: 15
-                        anchors.verticalCenter: parent.verticalCenter
-                        //anchors.topMargin: toPixels(0.1)
+//                    Text {
+//                        id: speedText
+//                        font.pixelSize: 55
+//                        text: kphInt
+//                        color: "white"
+//                        //horizontalAlignment: Text.AlignLeft
+//                        anchors.horizontalCenter: parent.horizontalCenter
+//                        //anchors.top: parent.top
+//                        //anchors.left: centerG.left
+//                        //anchors.leftMargin: 15
+//                        anchors.verticalCenter: parent.verticalCenter
+//                        //anchors.topMargin: toPixels(0.1)
 
-                        readonly property int kphInt: control.value
-                    }
-                    Text {
-                        text: "CVT"
-                        color: "white"
-                        font.pixelSize: 20
-                        font.bold: true
-                        anchors.topMargin: 7
-                        anchors.top: centerG.top
-                        anchors.horizontalCenter: parent.horizontalCenter
-                    }
+//                        readonly property int kphInt: control.value
+//                    }
+//                    Text {
+//                        text: "CVT"
+//                        color: "white"
+//                        font.pixelSize: 20
+//                        font.bold: true
+//                        anchors.topMargin: 7
+//                        anchors.top: centerG.top
+//                        anchors.horizontalCenter: parent.horizontalCenter
+//                    }
 
-                }
-            }
+//                }
+//            }
         }
 
         Rectangle{
