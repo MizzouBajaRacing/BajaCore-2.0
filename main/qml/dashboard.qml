@@ -101,7 +101,7 @@ ApplicationWindow {
                 anchors.leftMargin: 30
 //                anchors.verticalCenter: parent.verticalCenter
                 anchors.top: parent.top
-                anchors.topMargin: 15
+                anchors.topMargin: 20
                 text: valueSource.currTime
                 color: "white"
                 font.pixelSize: 60
@@ -137,7 +137,7 @@ ApplicationWindow {
                 anchors.leftMargin: 10
                 //anchors.verticalCenter: parent.verticalCenter
                 anchors.top: parent.top
-                anchors.topMargin: 15
+                anchors.topMargin: 20
                 text: "00:00.00"
                 color: "white"
                 font.pixelSize: 60
