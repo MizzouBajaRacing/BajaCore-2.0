@@ -189,7 +189,7 @@ ApplicationWindow {
             //anchors.verticalCenter: parent.verticalCenter
             maximumValue: 40
             width: height
-            height: container.height * 0.8
+            height: 384
             y: 220
             x: 210
             //anchors.horizontalCenter: parent.horizontalCenter
@@ -544,7 +544,7 @@ ApplicationWindow {
                         font.pixelSize: 20
                         font.bold: true
                         anchors.topMargin: 7
-                        anchors.top: centerG.top
+                        anchors.top: centerG1.top
                         anchors.horizontalCenter: parent.horizontalCenter
                     }
 
@@ -682,14 +682,14 @@ ApplicationWindow {
                    easing.type: Easing.InOutQuad
                    duration: 4000
                 }
-                PropertyAnimation {
-                   target: speedometer
-                   property: "y"
-                   from: 220
-                   to: 500
-                   duration: 4000
-                   easing.type: Easing.InOutSine
-                }
+//                PropertyAnimation {
+//                   target: speedometer
+//                   property: "y"
+//                   from: 220
+//                   to: 500
+//                   duration: 4000
+//                   easing.type: Easing.InOutSine
+//                }
                 onRunningChanged: {
                     console.log("Running:", running)
                 }
