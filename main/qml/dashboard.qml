@@ -191,8 +191,8 @@ ApplicationWindow {
             width: height
             height: container.height * 0.8
             y: 220
-            //x: 300
-            anchors.horizontalCenter: parent.horizontalCenter
+            x: 210
+            //anchors.horizontalCenter: parent.horizontalCenter
             //anchors.bottom: parent.bottom - 50
             //anchors.top: parent.bottom
 
