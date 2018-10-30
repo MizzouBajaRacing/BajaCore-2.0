@@ -198,7 +198,7 @@ ApplicationWindow {
         }
 
         CircularGauge {
-            visible: false
+            visible: true
             id: cvtTemp
             value: valueSource.mph * 10
             //anchors.verticalCenter: parent.verticalCenter
