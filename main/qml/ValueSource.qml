@@ -11,7 +11,8 @@ Item {
     function updateSpeed(speed, oldSpeed) {
         newMPH = speed
         oldMPH = oldSpeed
-        durr =  ((2600*(speed - oldSpeed)) / (speed - oldSpeed))
+        //durr =  ((2600*(speed - oldSpeed)) / (speed - oldSpeed))
+        durr =  ((1300*(speed - oldSpeed)) / (speed - oldSpeed))
         //durr =  1000
         animateSpeed.restart()
 
