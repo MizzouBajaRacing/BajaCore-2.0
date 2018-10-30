@@ -5,5 +5,6 @@
         <file>qml/dashboard.qml</file>
         <file>qml/ValueSource.qml</file>
         <file>qml/DashboardGaugeStyle.qml</file>
+        <file>qml/loadingScreen.qml</file>
     </qresource>
 </RCC>

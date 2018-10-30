@@ -602,6 +602,10 @@ ApplicationWindow {
 //        }
 //    }
 
+//    loadingScreen {
+//        id: loadingScreen
+//    }
+
     Item {
         id: loadingScreen
         objectName: 'loadingObj'

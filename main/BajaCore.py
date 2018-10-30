@@ -21,7 +21,7 @@ from PyQt5.QtWidgets import QGraphicsView, QGraphicsScene, QGraphicsWidget, QGra
 #from PyQt5.QtChart import QChart, QChartView, QLineSeries
 import math
 import PyQt5
-
+os.environ["QML2_IMPORT_PATH"] = "/usr/lib/arm-linux-gnueabihf/qt5/plugins/PyQt5/libpyqt5qmlplugin.so"
 
 class Main(QObject):
     def __init__(self,parent=None):

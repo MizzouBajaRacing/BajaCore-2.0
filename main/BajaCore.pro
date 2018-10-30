@@ -11,6 +11,9 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 TARGET = BajaCore
 TEMPLATE = app
 
+LIBS += -lQt5Charts
+
+
 # The following define makes your compiler emit warnings if you use
 # any feature of Qt which has been marked as deprecated (the exact warnings
 # depend on your compiler). Please consult the documentation of the
@@ -25,8 +28,8 @@ DEFINES += QT_DEPRECATED_WARNINGS
 CONFIG += c++11
 
 SOURCES += \
-        main.cpp \
-        mainwindow.cpp
+        BajaCore.py \
+
 
 RESOURCES += \
     resources.qrc
@@ -34,16 +37,17 @@ RESOURCES += \
 OTHER_FILES += \
     qml/dashboard.qml \
     qml/ValueSource.qml \
-    qml/DashboardGaugeStyle.qml
+    qml/DashboardGaugeStyle.qml \
+    qml/loadingScreen.qml
     #images/Background.png
 
 HEADERS += \
         mainwindow.h
 
 # Default rules for deployment.
-qnx: target.path = /tmp/$${TARGET}/bin
-else: unix:!android: target.path = /opt/$${TARGET}/bin
-!isEmpty(target.path): INSTALLS += target
+#qnx: target.path = /tmp/$${TARGET}/bin
+#else: unix:!android: target.path = /opt/$${TARGET}/bin
+#!isEmpty(target.path): INSTALLS += target
 
 RESOURCES += \
     resources.qrc
@@ -52,6 +56,7 @@ DISTFILES += \
     BajaCore.py \
     qml/dashboard.qml \
     qml/DashboardGaugeStyle.qml \
-    qml/ValueSource.qml
+    qml/ValueSource.qml \
+    qml/loadingScreen.qml
     #images/Background.png
 
