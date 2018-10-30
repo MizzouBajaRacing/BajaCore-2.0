@@ -204,8 +204,9 @@ ApplicationWindow {
                 labelStepSize: 10
                 labelInset: toPixels(1.23)
 
-                property real xCenter: parent.horizontalCenter
-                property real yCenter: speedometer.y
+
+                property real xCenter: speedometer.outerRadius
+                property real yCenter: speedometer.outerRadius
                 property real needleLength: outerRadius - tickmarkInset * 1.25
                 property real needleTipWidth: toPixels(0.06)
                 property real needleBaseWidth: toPixels(0.06)
