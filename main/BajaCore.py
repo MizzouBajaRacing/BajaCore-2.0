@@ -14,8 +14,6 @@ import sys
 import os
 import time
 import datetime
-import pyqtgraph as pg
-import numpy as np
 from pyqtgraph.Qt import QtGui, QtCore
 from PyQt5.QtWidgets import QGraphicsView, QGraphicsScene, QGraphicsWidget, QGraphicsLinearLayout
 #from PyQt5.QtChart import QChart, QChartView, QLineSeries
