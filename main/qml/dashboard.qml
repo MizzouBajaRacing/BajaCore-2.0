@@ -678,7 +678,7 @@ ApplicationWindow {
                   property: "x"
                   from: 850
                   to: 625
-                  duration: 4000
+                  duration: 3000
                   easing.type: Easing.InOutSine
                }
            },
