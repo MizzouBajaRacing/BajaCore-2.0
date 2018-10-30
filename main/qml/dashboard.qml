@@ -665,14 +665,22 @@ ApplicationWindow {
                    easing.type: Easing.InOutQuad
                    duration: 3000
                }
-//               PropertyAnimation {
-//                   target: speedometer
-//                   property: "y"
-//                   from: 500
-//                   to: 220
-//                   duration: 3000
-//                   easing.type: Easing.InOutSine
-//               }
+               PropertyAnimation {
+                   target: speedometer
+                   property: "y"
+                   from: 500
+                   to: 220
+                   duration: 3000
+                   easing.type: Easing.InOutSine
+               }
+               PropertyAnimation {
+                  target: cvtTemp
+                  property: "x"
+                  from: 800
+                  to: 625
+                  duration: 4000
+                  easing.type: Easing.InOutSine
+               }
            },
 
             Transition {
@@ -682,14 +690,22 @@ ApplicationWindow {
                    easing.type: Easing.InOutQuad
                    duration: 4000
                 }
-//                PropertyAnimation {
-//                   target: speedometer
-//                   property: "y"
-//                   from: 220
-//                   to: 500
-//                   duration: 4000
-//                   easing.type: Easing.InOutSine
-//                }
+                PropertyAnimation {
+                   target: speedometer
+                   property: "y"
+                   from: 220
+                   to: 500
+                   duration: 4000
+                   easing.type: Easing.InOutSine
+                }
+                PropertyAnimation {
+                   target: cvtTemp
+                   property: "x"
+                   from: 625
+                   to: 800
+                   duration: 4000
+                   easing.type: Easing.InOutSine
+                }
                 onRunningChanged: {
                     console.log("Running:", running)
                 }
