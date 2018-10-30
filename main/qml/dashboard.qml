@@ -23,6 +23,7 @@ ApplicationWindow {
     minimumWidth: width
 
     flags: Qt.FramelessWindowHint
+    visibility: Window.FullScreen
 
     color: "#161616"
     title: "boi"

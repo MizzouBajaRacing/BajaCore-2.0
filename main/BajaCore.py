@@ -27,6 +27,8 @@ class Main(QObject):
         self.engine = QQmlApplicationEngine(self)
         self.engine.load(QUrl.fromLocalFile('qml/dashboard.qml'))
         self.win = self.engine.rootObjects()[0]
+        self.win.showFullScreen();
+        #self.win.showExpanded();
 
 
     def show(self):
@@ -210,6 +212,7 @@ def main2 ():
     app = QGuiApplication(sys.argv)
 
     main = Main()
+
     main.show()
     
     sys.exit(app.exec_())
