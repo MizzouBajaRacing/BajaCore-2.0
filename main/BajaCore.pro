@@ -5,13 +5,14 @@
 #-------------------------------------------------
 
 QT       += core gui charts qml quick
+#QT       += charts
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = BajaCore
 TEMPLATE = app
 
-LIBS += -lQt5Charts
+#LIBS += -lQt5Charts
 
 QMAKE_CXXFLAGS += -mthumb
 #QMAKE_CXXFLAGS += -mthumb-interwork
