@@ -476,14 +476,14 @@ ApplicationWindow {
                // smoothly reanchor myRect and move into new position
                AnchorAnimation {
                    easing.type: Easing.InOutQuad
-                   duration: 6000
+                   duration: 3000
                }
                PropertyAnimation {
                    target: speedometer
                    property: "y"
                    from: 500
                    to: 220
-                   duration: 6000
+                   duration: 3000
                    easing.type: Easing.InOutSine
                }
            },
@@ -666,7 +666,7 @@ ApplicationWindow {
                     easing.type: Easing.OutInSine
                     from: 0
                     to: 1
-                    duration: 10000
+                    duration: 5000
                 }
             }
         }
