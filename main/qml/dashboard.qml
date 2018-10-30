@@ -676,7 +676,7 @@ ApplicationWindow {
                PropertyAnimation {
                   target: cvtTemp
                   property: "x"
-                  from: 800
+                  from: 850
                   to: 625
                   duration: 4000
                   easing.type: Easing.InOutSine
@@ -702,7 +702,7 @@ ApplicationWindow {
                    target: cvtTemp
                    property: "x"
                    from: 625
-                   to: 800
+                   to: 850
                    duration: 4000
                    easing.type: Easing.InOutSine
                 }
