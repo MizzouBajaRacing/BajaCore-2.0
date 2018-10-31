@@ -231,7 +231,7 @@ class currentClock (QObject):
 
 
     def sendCurrentTime (self):
-        currentTimeString = datetime.datetime.now().strftime("%I:%M %p")
+        currentTimeString = datetime.datetime.now().strftime("%-I:%M %p")
         self.updateClockSig.emit(currentTimeString) 
 
 def main2 ():
