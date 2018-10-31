@@ -37,4 +37,6 @@ Item {
     property string currTime: "00:00.00"
     property real rpm: 1
     property real fuel: 0.85
+
+    property string currentClock: "00:00 a.m."
 }

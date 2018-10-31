@@ -64,7 +64,7 @@ ApplicationWindow {
                 anchors.left: parent.left
                 anchors.leftMargin: 10
                 anchors.verticalCenter: parent.verticalCenter
-                text: "10:30 a.m."
+                text: valueSource.currentClock
                 color: "white"
                 font.pixelSize: 18
                 font.bold: true

@@ -73,6 +73,13 @@ class Main(QObject):
 
         #self.graph = self.win.findChild(QObject,'chartObj')
 
+        self.currentClock = currentClock()
+        self.currentClockThread = QThread()
+        self.currentClock.updateClockSig.connect(self.updateClock)
+        self.currentClock.moveToThread(self.currentClockThread)
+        self.currentClockThread.started.connect(self.currentClock.run)
+        self.currentClockThread.start()
+
     def updateGraph (self, x, y):
         #self.chartV.makeChart(x, y)
         pass
@@ -90,6 +97,7 @@ class Main(QObject):
         self.container.setProperty('state', 'final') 
         self.thread.start()   
         self.thread1.start()
+        
 
           
 
@@ -106,6 +114,9 @@ class Main(QObject):
 
     def updateTime (self, time):
         self.values.setProperty('currTime', time)
+
+    def updateClock (self, currentTimeString):
+        self.values.setProperty('currentClock', currentTimeString)
 
 
 
@@ -133,7 +144,7 @@ class gpsSpeed (QObject):
 
         self.timer = QTimer(self)
         self.timer.timeout.connect(self.incSpeed)
-        self.startTimer()
+        #self.startTimer()
         self.timer.start(1000)
 
         # while True:
@@ -206,6 +217,22 @@ class load (QObject):
         time.sleep(6)
         self.doneSig.emit()
     
+class currentClock (QObject):
+    updateClockSig = pyqtSignal(str)
+
+    def __init__(self, parent=None):
+        super().__init__(parent)
+
+    def run (self):
+        self.timer = QTimer(self)
+        self.timer.timeout.connect(self.sendCurrentTime)
+        #self.startTimer()
+        self.timer.start(2000)
+
+
+    def sendCurrentTime (self):
+        currentTimeString = datetime.datetime.now().strftime("%I:%M %p")
+        self.updateClockSig.emit(currentTimeString) 
 
 def main2 ():
     #app = QtGui.QApplication(sys.argv)
